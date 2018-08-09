@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="bruery_formatter.formatter_type_selector.class">Bruery\FormatterBundle\Form\Type\FormatterType</parameter>
+    </parameters>
+
+    <services>
+        <service id="bruery_formatter.formatter_type_selector" class="%bruery_formatter.formatter_type_selector.class%">
+            <tag name="form.type_extension" alias="sonata_formatter_type" />
+            <argument type="service" id="sonata.formatter.pool" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="ivory_ck_editor.config_manager" />
+        </service>
+    </services>
+</container>

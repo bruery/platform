@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="bruery.classification.category.pool.class">Bruery\ClassificationBundle\Provider\Category\Pool</parameter>
+        <parameter key="bruery.classification.collection.pool.class">Bruery\ClassificationBundle\Provider\Collection\Pool</parameter>
+        <parameter key="bruery.classification.tag.pool.class">Bruery\ClassificationBundle\Provider\Tag\Pool</parameter>
+        <parameter key="bruery.classification.category.provider.default.class">Bruery\ClassificationBundle\Provider\Category\DefaultProvider</parameter>
+        <parameter key="bruery.classification.collection.provider.default.class">Bruery\ClassificationBundle\Provider\Collection\DefaultProvider</parameter>
+        <parameter key="bruery.classification.tag.provider.default.class">Bruery\ClassificationBundle\Provider\Tag\DefaultProvider</parameter>
+    </parameters>
+
+    <services>
+        <service id="bruery.classification.category.pool" class="%bruery.classification.category.pool.class%" shared="true">
+            <argument />
+        </service>
+
+        <service id="bruery.classification.collection.pool" class="%bruery.classification.collection.pool.class%" shared="true">
+            <argument />
+        </service>
+
+        <service id="bruery.classification.tag.pool" class="%bruery.classification.tag.pool.class%" shared="true">
+            <argument />
+        </service>
+
+        <service id="bruery.classification.category.provider.default" class="%bruery.classification.category.provider.default.class%" shared="true">
+            <tag name="bruery.classification.category.provider" />
+            <argument>bruery.classification.category.provider.default</argument>
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+
+        <service id="bruery.classification.collection.provider.default" class="%bruery.classification.collection.provider.default.class%" shared="true">
+            <tag name="bruery.classification.collection.provider" />
+            <argument>bruery.classification.collection.provider.default</argument>
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+
+        <service id="bruery.classification.tag.provider.default" class="%bruery.classification.tag.provider.default.class%" shared="true">
+            <tag name="bruery.classification.tag.provider" />
+            <argument>bruery.classification.tag.provider.default</argument>
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+    </services>
+
+</container>

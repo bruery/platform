@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="view_all_timeline">
+                <source>view_all_timeline</source>
+                <target>View All</target>
+            </trans-unit>
+            <trans-unit id="main_menu_timeline">
+                <source>main_menu_timeline</source>
+                <target>Activity</target>
+            </trans-unit>
+            <trans-unit id="label_timeline">
+                <source>label_timeline</source>
+                <target>Timeline</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_timeline_list">
+                <source>breadcrumb.link_timeline_list</source>
+                <target>Timeline List</target>
+            </trans-unit>
+            <trans-unit id="list.label_context">
+                <source>list.label_context</source>
+                <target>Context</target>
+            </trans-unit>
+            <trans-unit id="list.label_action_verb">
+                <source>list.label_action_verb</source>
+                <target>Verb</target>
+            </trans-unit>
+            <trans-unit id="list.label_type">
+                <source>list.label_type</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="filter.label_id">
+                <source>filter.label_id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="filter.label_type">
+                <source>filter.label_type</source>
+                <target>Type</target>
+            </trans-unit>
+						<trans-unit id="form.label_id">
+                <source>form.label_id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="form.label_type">
+                <source>form.label_type</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="btn.load_more">
+                <source>btn.load_more</source>
+                <target>Load More</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_timeline_timeline">
+                <source>breadcrumb.link_timeline_timeline</source>
+                <target>Timeline</target>
+            </trans-unit>
+            <trans-unit id="timeline_title">
+                <source>timeline_title</source>
+                <target>Timeline</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

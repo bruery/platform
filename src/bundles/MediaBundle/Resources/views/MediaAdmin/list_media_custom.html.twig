@@ -1,0 +1,45 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-2">
+	        {% if admin.isGranted('EDIT', object) and admin.hasRoute('edit') %}
+                <div{% if object.getProviderName() != 'sonata.media.provider.image' and object.getProviderName() != 'sonata.media.provider.file' %} class="embed-responsive embed-responsive-16by9"{% endif %}>
+		            <a href="{{ admin.generateUrl('edit', {'id' : object|sonata_urlsafeid }) }}">{% media object, 'admin'  with {'height': 100} %}</a>
+	            </div>
+	        {% else %}
+		        {% thumbnail object, 'admin' with {'height': 150} %}
+	        {% endif %}
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-10">
+	        <span class="badge bg-light-blue">{{ object.providerName|trans({}, 'SonataMediaBundle') }}</span> &nbsp;
+	        {% if admin.isGranted('EDIT', object) and admin.hasRoute('edit') %}
+		        <a href="{{ admin.generateUrl('edit', {'id' : object|sonata_urlsafeid }) }}"><strong>{{ object.name }}</strong></a>
+	        {% else %}
+		        <strong>{{ object.name }}</strong>
+	        {% endif %}
+	        {% if object.name != null or (admin.isGranted('EDIT', object) and admin.hasRoute('edit'))%}
+	        <br />
+	        {% endif %}
+			{% if object.providerName == 'sonata.media.provider.image' %}
+		        {% if object.width %} {{ object.width }}{% if object.height %}x{{ object.height }}{% endif %}px{% endif %}
+		        {% if object.length > 0 %}
+			        ({{ object.length }})
+		        {% endif %}
+		        <br />
+			{% endif %}
+
+	        {% if object.authorname is not empty %}
+		        {{ object.authorname }}
+	        {% endif %}
+
+	        {% if object.copyright is not empty and object.authorname is not empty %}
+		        ~
+	        {% endif %}
+
+	        {% if object.copyright is not empty %}
+		        &copy; {{ object.copyright }}
+	        {% endif  %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="filter.label_created_at">
+                <source>filter.label_created_at</source>
+                <target>Created At</target>
+            </trans-unit>
+            <trans-unit id="filter.label_updated_at">
+                <source>filter.label_updated_at</source>
+                <target>Updated At</target>
+            </trans-unit>
+            <trans-unit id="list.label_created_at">
+                <source>list.label_created_at</source>
+                <target>Created At</target>
+            </trans-unit>
+            <trans-unit id="list.label_updated_at">
+                <source>list.label_updated_at</source>
+                <target>Updated At</target>
+            </trans-unit>
+            <trans-unit id="category_menu_header">
+                <source>category_menu_header</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="category_menu_header_description">
+                <source>category_menu_header_description</source>
+                <target>Categories and Sub-Categories</target>
+            </trans-unit>
+            <trans-unit id="sonata_collection">
+                <source>sonata_collection</source>
+                <target>Sonata Collection</target>
+            </trans-unit>
+            <trans-unit id="sonata_category">
+                <source>sonata_category</source>
+                <target>Sonata Category</target>
+            </trans-unit>
+            <trans-unit id="gallery_has_media">
+                <source>gallery_has_media</source>
+                <target>Gallery Media</target>
+            </trans-unit>
+            <trans-unit id="filter.label_collection">
+                <source>filter.label_collection</source>
+                <target>Collection</target>
+            </trans-unit>
+            <trans-unit id="filter.label_context">
+                <source>filter.label_context</source>
+                <target>Media Context</target>
+            </trans-unit>
+            <trans-unit id="bruery_gallery_settings">
+                <source>bruery_gallery_settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="form.label_settings">
+                <source>form.label_settings</source>
+                <target>Gallery Provider Settings</target>
+            </trans-unit>
+            <trans-unit id="form.label_gallery_has_media_settings">
+                <source>form.label_gallery_has_media_settings</source>
+                <target>GalleryMedia Provider Settings</target>
+            </trans-unit>
+            <trans-unit id="form.label_abstract">
+                <source>form.label_abstract</source>
+                <target>Abstract</target>
+            </trans-unit>
+            <trans-unit id="form.label_content">
+                <source>form.label_content</source>
+                <target>Content</target>
+            </trans-unit>
+            <trans-unit id="bruery_gallery_gallery">
+                <source>bruery_gallery_gallery</source>
+                <target>Gallery</target>
+            </trans-unit>
+            <trans-unit id="bruery_gallery_options">
+                <source>bruery_gallery_options</source>
+                <target>Options</target>
+            </trans-unit>
+            <trans-unit id="Media.bruery_gallery_has_media_media">
+                <source>Media.bruery_gallery_has_media_media</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="Settings.bruery_gallery_has_media_settings">
+                <source>Settings.bruery_gallery_has_media_settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="bruery_media_block">
+                <source>bruery_media_block</source>
+                <target>Media Block (RZ)</target>
+            </trans-unit>
+            <trans-unit id="media_collection_menu_header">
+                <source>media_collection_menu_header</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="media_collection_menu_header_description">
+                <source>media_collection_menu_header_description</source>
+                <target>Gallery Types</target>
+            </trans-unit>
+            <trans-unit id="form.label_gallery_has_medias_header">
+                <source>form.label_gallery_has_medias_header</source>
+                <target>Media Item</target>
+            </trans-unit>
+            <trans-unit id="media_context_not_found">
+                <source>media_context_not_found</source>
+                <target>Media Context  %context_slug% should be defined</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

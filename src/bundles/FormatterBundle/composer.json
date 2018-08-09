@@ -1,0 +1,33 @@
+{
+    "name": "bruery/formatter-bundle",
+    "type": "symfony-bundle",
+    "description": "SonataFormatterBundle Extension",
+    "keywords": ["symfony2", "SonataFormatterBundle Extension", "Bruery"],
+    "homepage": "https://bruery.github.io/formatter-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "viktore zara",
+            "email": "viktore.zara@gmail.com",
+            "homepage": "https://github.com/gzilt"
+        },
+        {
+            "name": "mell zamora",
+            "email": "mellzamora@outlook.com",
+            "homepage": "https://github.com/rmzamora"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "sonata-project/formatter-bundle": "^3.0",
+        "bruery/block-bundle": "^1.0"
+    },
+    "autoload": {
+        "psr-4": { "Bruery\\FormatterBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

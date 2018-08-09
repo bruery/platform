@@ -1,0 +1,63 @@
+{% extends 'BrueryAdminBundle:CRUD:list.html.twig' %}
+
+{% block list_table %}
+	{% if not app.request.get('hide_collection') %}
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="box box-widget widget-user-2">
+				<div class="widget-user-header bg-primary">
+					<div class="widget-user-image">
+						<img class="img-circle" src="{{ asset('bundles/brueryadmin/images/placeholder-logo.jpg') }}" alt="User Avatar">
+					</div>
+					<h3 class="widget-user-username"> {{ admin.trans('media_collection_menu_header', {}, admin.translationdomain) }}</h3>
+					<h5 class="widget-user-desc"> {{ admin.trans('media_collection_menu_header_description', {}, admin.translationdomain) }}</h5>
+				</div>
+				<div class="box-body">
+					<ul class="nav nav-stacked">
+						{% for collection in collections %}
+							{% if current_collection and collection.slug == current_collection.slug %}
+								<li><a class="text-uppercase" href="{{ admin.generateUrl('list', { 'collection': collection.slug, 'context':context.id }) }}">{{ collection.name }}<span class="pull-right badge bg-aqua-active"><i class="fa fa-fw fa-check-circle-o"></i></span></a></li>
+							{% else %}
+								<li><a class="text-uppercase" href="{{ admin.generateUrl('list', { 'collection': collection.slug, 'context':context.id }) }}">{{ collection.name }}</a></li>
+							{% endif %}
+						{% else %}
+							<li><a class="text-uppercase" href="#">No Collection Found</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+	{% if not app.request.get('hide_collection') %}
+		<div class="col-xs-12 col-sm-12 col-md-8 bruery-col">
+	{% endif %}
+	{% block list_inner_table %}
+		{{ parent() }}
+	{% endblock list_inner_table %}
+	{% if not app.request.get('hide_collection') %}
+		</div>
+	{% endif %}
+{% endblock %}
+
+
+{% block list_no_result %}
+<div class="info-box">
+	<span class="info-box-icon bg-aqua"><i class="fa fa-arrow-circle-right"></i></span>
+	<div class="info-box-content">
+		<span class="info-box-text">{{ 'no_result'|trans({}, 'SonataAdminBundle') }}</span>
+		<div class="progress">
+			<div class="progress-bar" style="width: 0%"></div>
+		</div>
+        <span class="progress-description">
+            {% if not app.request.xmlHttpRequest and collections|length > 0%}
+                {% include 'SonataAdminBundle:Button:create_button.html.twig' %}
+            {% endif %}
+        </span>
+	</div>
+</div>
+{% endblock list_no_result %}
+
+{% block actions %}
+	{% if  collections|length > 0%}
+	{% include 'SonataAdminBundle:CRUD:action_buttons.html.twig' %}
+	{% endif %}
+{% endblock %}
