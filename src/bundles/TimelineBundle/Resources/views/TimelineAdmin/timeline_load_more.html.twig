@@ -1,0 +1,10 @@
+{% if entries.lastPage  >  entries.page %}
+	{% set next =  entries.page +1 %}
+	<button type="button"
+	        class="btn btn-success btn-flat load-more-btn pull-right"
+	        data-href="{{ admin_pool.getAdminByAdminCode('bruery.timeline.admin.timeline').generateUrl('timeline', {'page':next}) }}"
+	        data-load-more-class="box-footer"
+	        data-target-class="timeline"><i class="fa fa-fw fa-history"></i> {{ 'btn.load_more'|trans({}, 'SonataTimelineBundle') }}</button>
+{% else %}
+	<button type="button"  class="btn btn-success btn-flat load-more-btn pull-right disabled"><i class="fa fa-fw fa-history"></i> {{ 'btn.load_more'|trans({}, 'SonataTimelineBundle') }}</button>
+{% endif %}
