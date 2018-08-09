@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="bruery.timeline.entity.manager.timeline.class">Bruery\TimelineBundle\Entity\TimelineManager</parameter>
+        <parameter key="bruery.timeline.entity.manager.action.class">Bruery\TimelineBundle\Entity\ActionManager</parameter>
+        <parameter key="bruery.timeline.entity.manager.action_component.class">Bruery\TimelineBundle\Entity\ActionComponentManager</parameter>
+        <parameter key="bruery.timeline.entity.manager.component.class">Bruery\TimelineBundle\Entity\ComponentManager</parameter>
+    </parameters>
+
+    <services>
+        <service id="bruery.timeline.manager.timeline" class="%bruery.timeline.entity.manager.timeline.class%">
+            <argument>%bruery.timeline.timeline.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="bruery.timeline.manager.action" class="%bruery.timeline.entity.manager.action.class%">
+            <argument>%bruery.timeline.action.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="bruery.timeline.manager.action_component" class="%bruery.timeline.entity.manager.action_component.class%">
+            <argument>%bruery.timeline.action_component.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+
+        <service id="bruery.timeline.manager.component" class="%bruery.timeline.entity.manager.component.class%">
+            <argument>%bruery.timeline.component.entity%</argument>
+            <argument type="service" id="doctrine" />
+        </service>
+    </services>
+</container>

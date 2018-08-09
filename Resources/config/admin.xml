@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="bruery.timeline.admin.timeline.class">Bruery\TimelineBundle\Admin\TimelineAdmin</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="bruery.timeline.admin.timeline" class="%bruery.timeline.admin.timeline.class%">
+            <tag name="sonata.admin" manager_type="orm" group="timeline" label="label_timeline"  show_in_dashboard="false" label_catalogue="%bruery.timeline.admin.timeline.translation_domain%" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%bruery.timeline.admin.timeline.entity%</argument>
+            <argument>%bruery.timeline.admin.timeline.controller%</argument>
+
+            <call method="setTranslationDomain">
+                <argument>%bruery.timeline.admin.timeline.translation_domain%</argument>
+            </call>
+        </service>
+
+    </services>
+
+</container>
