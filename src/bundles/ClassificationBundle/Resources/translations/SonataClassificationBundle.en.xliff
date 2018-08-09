@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="" >
+        <body>
+            <trans-unit id="context_title">
+                <source>context_title</source>
+                <target>Context</target>
+            </trans-unit>
+
+            <trans-unit id='flash_category_context_not_available'>
+                <source>flash_category_context_not_available</source>
+                <target>No new available context.</target>
+            </trans-unit>
+
+            <trans-unit id='flash_category_context_created'>
+                <source>flash_category_context_created</source>
+                <target>Created base category from context: %context%</target>
+            </trans-unit>
+
+            <trans-unit id='title_select_context'>
+                <source>title_select_context</source>
+                <target>Select context</target>
+            </trans-unit>
+
+            <trans-unit id="link_action_create_from_context">
+                <source>link_action_create_from_context</source>
+                <target>Add New from Context</target>
+            </trans-unit>
+            <trans-unit id="list.label__action">
+                <source>list.label__action</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="collection_context_menu_header">
+                <source>collection_context_menu_header</source>
+                <target>Collection</target>
+            </trans-unit>
+            <trans-unit id="collection_context_menu_header_description">
+                <source>collection_context_menu_header_description</source>
+                <target>Contexts</target>
+            </trans-unit>
+            <trans-unit id="tag_context_menu_header">
+                <source>tag_context_menu_header</source>
+                <target>Tag</target>
+            </trans-unit>
+            <trans-unit id="tag_context_menu_header_description">
+                <source>tag_context_menu_header_description</source>
+                <target>Contexts</target>
+            </trans-unit>
+            <trans-unit id="tab.bruery_classification_category_general">
+                <source>tab.bruery_classification_category_general</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="tab.group.bruery_classification_category_general">
+                <source>tab.group.bruery_classification_category_general</source>
+                <target>Details</target>
+            </trans-unit>
+           <trans-unit id="tab.group.bruery_classification_category_options">
+               <source>tab.group.bruery_classification_category_options</source>
+               <target>Options</target>
+           </trans-unit>
+            <trans-unit id="tab.bruery_classification_category_settings">
+                <source>tab.bruery_classification_category_settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="tab.group.bruery_classification_category_settings">
+                <source>tab.group.bruery_classification_category_settings</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="tab.group.bruery_classification_collection_general">
+                <source>tab.group.bruery_classification_collection_general</source>
+                <target>Collection</target>
+            </trans-unit>
+            <trans-unit id="tab.group.bruery_classification_collection_settings">
+                <source>tab.group.bruery_classification_collection_settings</source>
+                <target>Settings</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_category_create">
+                <source>breadcrumb.link_category_create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_collection_create">
+                <source>breadcrumb.link_collection_create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_tag_create">
+                <source>breadcrumb.link_tag_create</source>
+                <target>Create</target>
+            </trans-unit>
+            <trans-unit id="tab.group.bruery_classification_tag_general">
+                <source>tab.group.bruery_classification_tag_general</source>
+                <target>Tag</target>
+            </trans-unit>
+            <trans-unit id="tab.group.bruery_classification_tag_settings">
+                <source>tab.group.bruery_classification_tag_settings</source>
+                <target>Settings</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

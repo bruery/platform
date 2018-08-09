@@ -1,0 +1,39 @@
+{% extends 'BrueryAdminBundle:CRUD:list.html.twig' %}
+
+{% block list_table %}
+	{% if not app.request.get('hide_context') %}
+		<div class="col-xs-12 col-sm-12 col-md-4">
+			<div class="box box-widget widget-user-2">
+				<div class="widget-user-header bg-primary">
+					<div class="widget-user-image">
+						<img class="img-circle" src="{{ asset('bundles/brueryadmin/images/placeholder-logo.jpg') }}" alt="User Avatar">
+					</div>
+					<h3 class="widget-user-username"> {{ admin.trans('tag_context_menu_header', {}, admin.translationdomain) }}</h3>
+					<h5 class="widget-user-desc"> {{ admin.trans('tag_context_menu_header_description', {}, admin.translationdomain) }}</h5>
+				</div>
+				<div class="box-body">
+					<ul class="nav nav-stacked">
+						{% for context in contexts %}
+							{% if current_context and context.id == current_context.id %}
+								<li><a class="text-uppercase" href="{{ admin.generateUrl('list', { 'context': context.id }) }}">{{ context.name }}<span class="pull-right badge bg-primary"><i class="fa fa-fw fa-check-circle-o"></i></span></a></li>
+							{% else %}
+								<li><a class="text-uppercase" href="{{ admin.generateUrl('list', { 'context': context.id }) }}">{{ context.name }}</a></li>
+							{% endif %}
+						{% else %}
+							<li><a class="text-uppercase" href="#">{{ 'no_result'|trans({}, 'SonataAdminBundle') }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+	{% if not app.request.get('hide_context') %}
+		<div class="col-xs-12 col-sm-12 col-md-8 bruery-col">
+	{% else %}
+		<div class="col-xs-12 col-sm-12 col-md-12 bruery-col">
+	{% endif %}
+	{% block list_inner_table %}
+		{{ parent() }}
+	{% endblock list_inner_table %}
+		</div>
+{% endblock %}

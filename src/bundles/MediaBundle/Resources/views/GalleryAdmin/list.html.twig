@@ -1,0 +1,15 @@
+{% extends 'BrueryAdminBundle:CRUD:list.html.twig' %}
+
+{% block preview %}
+    {% if not app.request.get('hide_collection') %}
+        <ul class="nav nav-pills">
+            {% for collection in collections %}
+                {% if current_collection and collection.slug == current_collection.slug %}
+                    <li class="active"><a class="text-uppercase" href="{{ admin.generateUrl('list', { 'collection': collection.slug, 'context':context.id }) }}">{{ collection.name }}</a></li>
+                {% else %}
+                    <li><a class="text-uppercase" href="{{ admin.generateUrl('list', { 'collection': collection.slug, 'context':context.id }) }}">{{ collection.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

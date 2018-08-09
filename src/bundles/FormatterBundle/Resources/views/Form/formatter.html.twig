@@ -1,0 +1,92 @@
+{% block sonata_formatter_type_widget %}
+    <div class="row-fluid">
+        {{ form_widget(form.children[format_field], {'attr': {'class':'chosen-select span4'} }) }}
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+            <i>{{ "please_select_format_method"|trans({}, "SonataFormatterBundle") }}</i>
+        </div>
+    </div>
+
+    <div class="row-fluid bruery-formatter-source">
+        <div class="span12">
+            {{ form_widget(form.children[source_field]) }}
+        </div>
+    </div>
+    <script>
+        var {{ form.children[source_field].vars.id }}_rich_instance = false;
+
+        jQuery(document).ready(function() {
+
+            // This code requires CKEDITOR
+            if (typeof CKEDITOR === 'undefined') {
+                console.log('BrueryFormatterBundle requires CKEditor Installed.');
+                return;
+            }
+
+            jQuery('#{{ form.children[format_field].vars.id }}').parents("form").on('click', function(event) {
+                if ({{ form.children[source_field].vars.id }}_rich_instance) {
+                    {{ form.children[source_field].vars.id }}_rich_instance.updateElement();
+                }
+            });
+
+            jQuery('#{{ form.children[format_field].vars.id }}').change(function() {
+                var elms = jQuery('#{{ form.children[source_field].vars.id }}');
+
+                if ({{ form.children[source_field].vars.id }}_rich_instance) {
+                    {{ form.children[source_field].vars.id }}_rich_instance.destroy();
+                }
+
+                var val = jQuery(this).val();
+                switch(val) {
+                    case 'markdown':
+                        {{ form.children[source_field].vars.id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            resize_enabled: true,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
+                        break;
+                    case 'text':
+                        {{ form.children[source_field].vars.id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            resize_enabled: true,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
+                        break;
+                    case 'twig':
+                        {{ form.children[source_field].vars.id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
+                        break;
+                    case 'rawhtml':
+                        {{ form.children[source_field].vars.id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
+                        break;
+                    case 'richhtml':
+                        {{ form.children[source_field].vars.id }}_rich_instance = {{ ckeditor_widget(form.children[source_field].vars.id, ckeditor_configuration) }};
+                }
+            });
+
+            jQuery('#{{ form.children[format_field].vars.id }}').trigger('change');
+        });
+    </script>
+{% endblock sonata_formatter_type_widget %}

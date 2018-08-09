@@ -1,0 +1,32 @@
+{
+  "name": "bruery/entity-audit-bundle",
+  "type": "symfony-bundle",
+  "description": "Impletentation of SimpleThingsEntityAuditBundle",
+  "keywords": ["symfony2", "SimpleThingsEntityAuditBundle", "Bruery"],
+  "homepage": "https://bruery.github.io/entity-audit-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "viktore zara",
+      "email": "viktore.zara@gmail.com",
+      "homepage": "https://github.com/gzilt"
+    },
+    {
+      "name": "mell zamora",
+      "email": "mellzamora@outlook.com",
+      "homepage": "https://github.com/rmzamora"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "simplethings/entity-audit-bundle": "^0.8"
+  },
+  "autoload": {
+    "psr-4": { "Bruery\\EntityAuditBundle\\": "" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  }
+}

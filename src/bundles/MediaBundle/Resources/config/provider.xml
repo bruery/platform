@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="bruery.media.provider.image.class">Bruery\MediaBundle\Provider\Media\ImageProvider</parameter>
+        <parameter key="bruery.media.provider.file.class">Bruery\MediaBundle\Provider\Media\FileProvider</parameter>
+        <parameter key="bruery.media.gallery.pool.class">Bruery\MediaBundle\Provider\Gallery\Pool</parameter>
+        <parameter key="bruery.media.gallery_has_media.pool.class">Bruery\MediaBundle\Provider\GalleryHasMedia\Pool</parameter>
+        <parameter key="bruery.media.gallery_provider.default.class">Bruery\MediaBundle\Provider\Gallery\DefaultProvider</parameter>
+        <parameter key="bruery.media.gallery_has_media_provider.default.class">Bruery\MediaBundle\Provider\GalleryHasMedia\DefaultProvider</parameter>
+    </parameters>
+
+    <services>
+        <service id="bruery.media.gallery.pool" class="%bruery.media.gallery.pool.class%" shared="true">
+            <argument />
+        </service>
+        <service id="bruery.media.gallery_has_media.pool" class="%bruery.media.gallery_has_media.pool.class%" shared="true">
+            <argument />
+        </service>
+        <service id="bruery.media.gallery_provider.default" class="%bruery.media.gallery_provider.default.class%" shared="true">
+            <tag name="bruery.media.gallery_provider" />
+            <argument>bruery.media.gallery_provider.default</argument>
+        </service>
+
+        <service id="bruery.media.gallery_has_media_provider.default" class="%bruery.media.gallery_has_media_provider.default.class%" shared="true">
+            <tag name="bruery.media.gallery_has_media_provider" />
+            <argument>bruery.media.gallery_has_media_provider.default</argument>
+        </service>
+    </services>
+
+</container>

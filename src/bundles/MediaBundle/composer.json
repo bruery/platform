@@ -1,0 +1,36 @@
+{
+    "name": "bruery/media-bundle",
+    "type": "symfony-bundle",
+    "description": "SonataMediaBundle Extension",
+    "keywords": ["symfony2", "SonataMediaBundle Extension", "Bruery"],
+    "homepage": "https://bruery.github.io/media-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "viktore zara",
+            "email": "viktore.zara@gmail.com",
+            "homepage": "https://github.com/gzilt"
+        },
+        {
+            "name": "mell zamora",
+            "email": "mellzamora@outlook.com",
+            "homepage": "https://github.com/rmzamora"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "sonata-project/media-bundle": "^3.0",
+        "bruery/core-bundle": "^1.0",
+        "bruery/admin-bundle": "^1.0",
+        "bruery/doctrine-orm-admin-bundle": "^1.0",
+        "stof/doctrine-extensions-bundle": "^1.2.2"
+    },
+    "autoload": {
+        "psr-4": { "Bruery\\FormatterBundle\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
